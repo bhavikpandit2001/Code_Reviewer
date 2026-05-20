@@ -30,11 +30,6 @@ OPENAI_API_KEY=your_api_key_here
 
 Do not commit `.env` or any secret values.
 
-3. Start Mastra Studio:
-
-```shell
-npm run dev
-```
 
 On Windows PowerShell, if script execution is blocked, use:
 
