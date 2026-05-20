@@ -25,7 +25,7 @@ copy .env.example .env
 If `.env.example` is not present, create `.env` manually and add:
 
 ```shell
-OPENAI_API_KEY=your_api_key_here
+MISTRAL_API_KEY=your_api_key_here
 ```
 
 Do not commit `.env` or any secret values.
