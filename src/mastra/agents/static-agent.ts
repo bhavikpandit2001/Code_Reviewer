@@ -2,6 +2,7 @@ import { Agent } from "@mastra/core/agent";
 import { Memory } from "@mastra/memory";
 import { scanTool } from "../tools/scan-tool";
 import { semgrepTool } from "../tools/semgrep-tool";
+import { LibSQLStore } from "@mastra/libsql";
 
 export const staticAgent = new Agent({
     id: "static-agent",
@@ -13,5 +14,10 @@ export const staticAgent = new Agent({
         scanTool,
         semgrepTool
     },
-    memory: new Memory(),
+    memory: new Memory({
+        storage: new LibSQLStore({
+            id: "static-agent-memory",
+            url: "file:./mastra.db"
+        })
+    }),
 });

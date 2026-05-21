@@ -1,6 +1,7 @@
 import { Agent } from "@mastra/core/agent";
 import { reportTool } from "../tools/report-tool";
 import { Memory } from "@mastra/memory";
+import { LibSQLStore } from "@mastra/libsql";
 
 export const reportAgent = new Agent({
     id: "report-agent",
@@ -13,5 +14,10 @@ export const reportAgent = new Agent({
         reportTool
     },
     model: 'mistral/mistral-medium-2508',
-    memory: new Memory(),
+    memory: new Memory({
+        storage: new LibSQLStore({
+            id: "report-agent-memory",
+            url: "file:./mastra.db"
+        })
+    }),
 });
