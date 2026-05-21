@@ -6,7 +6,7 @@ A Mastra TypeScript project for reviewing GitHub repositories with agents, tools
 
 - Node.js `>=22.13.0`
 - npm
-- An OpenAI API key for the configured `openai/gpt-5-mini` model
+- An MISTRAL    API key for the configured `mistral-medium-2508` model
 
 ## Project Setup
 
@@ -25,7 +25,7 @@ copy .env.example .env
 If `.env.example` is not present, create `.env` manually and add:
 
 ```shell
-OPENAI_API_KEY=your_api_key_here
+MISTRAL_API_KEY=your_api_key_here
 ```
 
 Do not commit `.env` or any secret values.
